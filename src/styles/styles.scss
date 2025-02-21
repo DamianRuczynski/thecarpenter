@@ -1,0 +1,29 @@
+@import "reset";
+@import "typography";
+
+$bg-primary: hsla(19, 19%, 20%, 1);
+$bg-secondary: hsla(57, 91%, 91%, 1);
+$bg-tertiary: hsla(26, 28%, 65%, 1);
+
+body {
+  background: radial-gradient(
+        circle at top right,
+        $bg-secondary 0%,
+        hsla(57, 91%, 91%, 0) 50%
+      )
+      no-repeat,
+    radial-gradient(
+        circle at bottom left,
+        $bg-tertiary 0%,
+        hsla(26, 28%, 65%, 0) 50%
+      )
+      no-repeat,
+    $bg-primary;
+
+  background-size: 50vw 50vw, 50vw 50vw, cover;
+  background-position: top right, bottom left, center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
