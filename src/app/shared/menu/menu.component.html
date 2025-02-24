@@ -1,0 +1,30 @@
+<nav class="menu" tcpScrollbar>
+  <ul class="menu__list">
+    @for(menuItem of menu.menuConfig$ | async; track menuItem.room){
+    <li class="menu__list__item">
+      <a
+        [routerLink]="['/', menuItem.room.toLowerCase(), '']"
+        routerLinkActive="router-link-active"
+        class="menu__list__item__link"
+      >
+        {{ "rooms." + menuItem.room | translate }}
+      </a>
+      <ul class="menu__list__item__submenu">
+        @for(category of menuItem.categories; track category){
+        <li class="menu__list__item__submenu__item">
+          <a
+            [routerLink]="['/', menuItem.room.toLowerCase(), category]"
+            routerLinkActive="router-link-active"
+            class="menu__list__item__submenu__item__link"
+          >
+            {{ "categories." + category | translate }}
+          </a>
+        </li>
+        }
+      </ul>
+    </li>
+    }
+  </ul>
+
+  <button class="menu__button">{{ "menu.catalog" | translate }}</button>
+</nav>

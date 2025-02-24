@@ -1,9 +1,6 @@
 @import "reset";
 @import "typography";
-
-$bg-primary: hsla(19, 19%, 20%, 1);
-$bg-secondary: hsla(57, 91%, 91%, 1);
-$bg-tertiary: hsla(26, 28%, 65%, 1);
+@import "variables";
 
 body {
   background: radial-gradient(
@@ -20,10 +17,6 @@ body {
       no-repeat,
     $bg-primary;
 
-  background-size: 50vw 50vw, 50vw 50vw, cover;
+  background-size: 50vw 50vw, max(50vw, 500px) max(50vw, 500px), cover;
   background-position: top right, bottom left, center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

@@ -1,6 +1,46 @@
 {
+  "categories": {
+    "table": "Table",
+    "chair": "Chair",
+    "cabinet": "Cabinet",
+    "fridge": "Fridge",
+    "sink": "Sink",
+    "stove": "Stove",
+    "bathtub": "Bathtub",
+    "shower": "Shower",
+    "washing_machine": "Washing Machine",
+    "bed": "Bed",
+    "wardrobe": "Wardrobe",
+    "dresser": "Dresser",
+    "nightstand": "Nightstand",
+    "sofa": "Sofa",
+    "coffee_table": "Coffee Table",
+    "tv_stand": "TV Stand",
+    "bookcase": "Bookcase",
+    "shelf": "Shelf",
+    "hanger": "Hanger"
+  },
+  "contact": {
+    "button": "Contact Us",
+    "name": "Name",
+    "email": "email@email.com",
+    "phone": "+48756354345"
+  },
+  "menu": {
+    "catalog": "Catalog"
+  },
   "projects": {
     "title": "Title",
     "category": "Category"
+  },
+  "rooms": {
+    "kitchen": "Kitchen",
+    "bathroom": "Bathroom",
+    "bedroom": "Bedroom",
+    "living_room": "Living Room",
+    "dining_room": "Dining Room",
+    "office": "Office",
+    "hallway": "Hallway",
+    "laundry_room": "Laundry Room"
   }
 }

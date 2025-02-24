@@ -1,6 +1,46 @@
 {
+  "categories": {
+    "table": "Stół",
+    "chair": "Krzesło",
+    "cabinet": "Szafa",
+    "fridge": "Lodówka",
+    "sink": "Zlew",
+    "stove": "Kuchenka",
+    "bathtub": "Wanna",
+    "shower": "Prysznic",
+    "washing_machine": "Pralka",
+    "bed": "Łóżko",
+    "wardrobe": "Garderoba",
+    "dresser": "Komoda",
+    "nightstand": "Szafka nocna",
+    "sofa": "Sofa",
+    "coffee_table": "Stolik kawowy",
+    "tv_stand": "Stojak pod telewizor",
+    "bookcase": "Regał",
+    "shelf": "Półka",
+    "hanger": "Wieszak"
+  },
+  "contact": {
+    "button": "Skontaktuj się",
+    "name": "Imię",
+    "email": "email@email.com",
+    "phone": "+48756354345"
+  },
+  "menu": {
+    "catalog": "Katalog"
+  },
   "projects": {
     "title": "Tytuł",
     "category": "Kategoria"
+  },
+  "rooms": {
+    "kitchen": "Kuchnia",
+    "bathroom": "Łazienka",
+    "bedroom": "Sypialnia",
+    "living_room": "Salon",
+    "dining_room": "Jadalnia",
+    "office": "Biuro",
+    "hallway": "Korytarz",
+    "laundry_room": "Pralnia"
   }
 }

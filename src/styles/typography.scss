@@ -4,7 +4,7 @@ $font-primary: "Playfair Display", serif;
 
 $font-color-primary: hsla(26, 28%, 65%, 1);
 $font-color-secondary: hsla(0, 0%, 100%, 1);
-
+$font-color-tertiary: hsla(22, 24%, 20%, 1);
 body {
   font-family: $font-primary;
   color: $font-color-secondary;
@@ -15,11 +15,21 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+button {
   font-family: $font-primary;
   font-weight: 600;
   color: $font-color-primary;
   line-height: 1.2;
+}
+
+button {
+  background: transparent;
+  border: 2px solid $font-color-tertiary;
+  border-radius: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: $font-color-tertiary;
 }
 
 h1 {

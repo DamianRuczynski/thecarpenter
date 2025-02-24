@@ -84,3 +84,8 @@ export const RoomCategories: Record<Room, Category[]> = {
     Category.SHELF,
   ],
 };
+
+export type MenuConfig = {
+  room: Room;
+  categories: Category[];
+};

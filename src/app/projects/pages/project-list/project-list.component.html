@@ -1,0 +1,6 @@
+<p>project-list works for {{ projects.length }}</p>
+
+@for(project of projects; track project.id){
+<h3>Streszczenie</h3>
+<p>Tytuł: {{ project.title }}</p>
+}

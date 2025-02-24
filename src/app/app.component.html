@@ -1,18 +1,26 @@
-<h1>TheCarpenter</h1>
-<table>
-  <thead>
-    <tr>
-      <th>{{ "projects.title" | translate }}</th>
-      <th>{{ "projects.category" | translate }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for(item of (projects); track item){
+<div class="layout">
+  <header class="layout__header">
+    <a class="layout__logo" [routerLink]="['/', 'home']">
+      <h1>TheCarpenter</h1>
+    </a>
+    <div class="layout__actions">
+      <!-- tcp-language -->
+      <p>🗺️</p>
+      <!-- <tcp-button (onClick)="openContactDialog()"></tcp-button> -->
+      <button>{{ "contact.button" | translate }}</button>
+    </div>
+  </header>
 
-    <tr>
-      <td>{{ item.title }}</td>
-      <td>{{ item.category }}</td>
-    </tr>
-    }
-  </tbody>
-</table>
+  <main class="layout__main">
+    <tcp-menu></tcp-menu>
+    <section>
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+
+  <footer class="layout__footer">
+    <h5>{{ "contact.name" | translate }}</h5>
+    <h5>{{ "contact.email" | translate }}</h5>
+    <h5>{{ "contact.phone" | translate }}</h5>
+  </footer>
+</div>
