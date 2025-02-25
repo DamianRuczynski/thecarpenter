@@ -1,0 +1,35 @@
+@import "./typography.scss";
+@import "./variables.scss";
+
+html {
+  --mdc-dialog-container-color: hsla(19, 19%, 20%, 1);
+  --mdc-dialog-subhead-color: $font-color-primary;
+  --mdc-dialog-supporting-text-color: $font-color-secondary;
+  --mdc-dialog-subhead-font: $font-primary;
+  --mdc-dialog-subhead-line-height: 2rem;
+  --mdc-dialog-subhead-size: 1.5rem;
+  --mdc-dialog-subhead-weight: 400;
+  --mdc-dialog-supporting-text-font: $font-primary;
+  --mat-icon-color: hsla(19, 19%, 20%, 1);
+}
+
+.mat-mdc-dialog-component-host {
+  button {
+    border-color: $font-color-primary;
+    color: $font-color-primary;
+    margin: 0 5px;
+  }
+}
+
+.mat-mdc-dialog-container .mat-mdc-dialog-title {
+  --mdc-dialog-subhead-color: hsla(26, 28%, 65%, 1);
+  --mat-app-on-surface: rgba(0, 0, 0, 0.87);
+  --mdc-dialog-subhead-font: $font-primary;
+  --mat-app-headline-small-font: 2.5rem;
+  --mdc-dialog-subhead-line-height: 1.2rem;
+  --mat-app-headline-small-line-height: 1.5rem;
+  --mdc-dialog-subhead-size: 1.5rem;
+  --mat-app-headline-small-size: 1rem;
+  --mdc-dialog-subhead-weight: 600;
+  --mat-app-headline-small-weight: 400;
+}

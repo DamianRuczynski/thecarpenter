@@ -26,5 +26,7 @@
     }
   </ul>
 
-  <button class="menu__button">{{ "menu.catalog" | translate }}</button>
+  <button class="menu__button" (click)="openCatalogDialog()">
+    {{ "menu.catalog" | translate }}
+  </button>
 </nav>

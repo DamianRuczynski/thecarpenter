@@ -26,6 +26,19 @@
     "email": "email@email.com",
     "phone": "+48756354345"
   },
+  "dialog": {
+    "catalogs": {
+      "title": "Discover our catalogs!",
+      "drewmax": "Drewmax",
+      "kronospan": "Kondex"
+    },
+    "contact": {
+      "title": "Contact us",
+      "phone": "Phone: +48756354345",
+      "email": "E-mail: email@email.com"
+    },
+    "close": "Zamknij"
+  },
   "menu": {
     "catalog": "Katalog"
   },

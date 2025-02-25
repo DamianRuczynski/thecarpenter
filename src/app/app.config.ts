@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (
   http: HttpClient
@@ -34,6 +35,6 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient],
         },
       }),
-    ]),
+    ]), provideAnimationsAsync(),
   ],
 };

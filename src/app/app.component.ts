@@ -1,19 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MenuComponent } from './shared/menu/menu.component';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from './ui/dialog/dialog.component';
+import { DialogData } from './ui/dialog/dialog.model';
+import { MatIconModule } from '@angular/material/icon';
+import { LanguageComponent } from './ui/language/language.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TranslateModule, RouterOutlet, RouterLink, MenuComponent],
+  imports: [
+    TranslateModule,
+    RouterOutlet,
+    RouterLink,
+    MenuComponent,
+    MatIconModule,
+    LanguageComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  readonly dialog = inject(MatDialog);
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['pl', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use(this.translate.getBrowserLang() === 'pl' ? 'pl' : 'en');
+  }
+
+  public openContactDialog(): void {
+    // const data: DialogData = {
+    //   title: 'Skontaktuj się',
+    //   content: ['Telefon: +48756354345', 'E-mail: email@email.com'],
+    // };
+    const data: DialogData = {
+      title: 'contact.title',
+      content: ['contact.phone', 'contact.email'],
+    };
+    this.dialog.open(DialogComponent, {
+      width: '350px',
+      data: data,
+    });
   }
 }

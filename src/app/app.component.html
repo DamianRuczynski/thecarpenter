@@ -4,10 +4,10 @@
       <h1>TheCarpenter</h1>
     </a>
     <div class="layout__actions">
-      <!-- tcp-language -->
-      <p>🗺️</p>
-      <!-- <tcp-button (onClick)="openContactDialog()"></tcp-button> -->
-      <button>{{ "contact.button" | translate }}</button>
+      <tcp-language></tcp-language>
+      <button (click)="openContactDialog()">
+        {{ "contact.button" | translate }}
+      </button>
     </div>
   </header>
 
