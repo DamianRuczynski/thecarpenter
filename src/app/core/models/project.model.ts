@@ -3,8 +3,18 @@ export type TProject = {
   title: string;
   description: string;
   category: Category;
-  photos: string[];
+  media: Media[];
 };
+
+export type Media = {
+  category: MediaCategory;
+  url: string;
+};
+
+enum MediaCategory {
+  VIDEO = 'video',
+  IMAGE = 'image',
+}
 
 export enum Room {
   KITCHEN = 'kitchen',

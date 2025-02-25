@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { TProject } from '../../../core/models/project.model';
 import { ProjectService } from '../../../core/service/project.service';
 import { switchMap } from 'rxjs';
+import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 
 @Component({
   selector: 'tcp-project-list',
   standalone: true,
-  imports: [],
+  imports: [ProjectCardComponent],
   templateUrl: './project-list.component.html',
   styleUrl: './project-list.component.scss',
 })
