@@ -5,22 +5,36 @@
     </a>
     <div class="layout__actions">
       <tcp-language></tcp-language>
+      @if (!mobileQuery.matches) {
       <button (click)="openContactDialog()">
         {{ "contact.button" | translate }}
+      </button>
+      }
+      <button (click)="snav.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
       </button>
     </div>
   </header>
 
   <main class="layout__main">
-    <tcp-menu></tcp-menu>
-    <section>
-      <router-outlet></router-outlet>
-    </section>
+    <mat-sidenav-container class="layout__sidenav-container">
+      <mat-sidenav
+        #snav
+        class="layout__sidenav"
+        [ngClass]="{ 'layout__sidenav--mobile': mobileQuery.matches }"
+        [mode]="mobileQuery.matches ? 'over' : 'side'"
+      >
+        <tcp-menu></tcp-menu>
+      </mat-sidenav>
+      <mat-sidenav-content class="layout__content">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </main>
 
   <footer class="layout__footer">
-    <h5>{{ "contact.name" | translate }}</h5>
-    <h5>{{ "contact.email" | translate }}</h5>
-    <h5>{{ "contact.phone" | translate }}</h5>
+    <h6>{{ "contact.name" | translate }}</h6>
+    <h6>{{ "contact.email" | translate }}</h6>
+    <h6>{{ "contact.phone" | translate }}</h6>
   </footer>
 </div>

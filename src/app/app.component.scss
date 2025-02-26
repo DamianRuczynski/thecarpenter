@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px $bg-tertiary solid;
+    border: 1px solid $bg-tertiary;
     width: 235px;
     padding: 5px 7px;
     border-radius: 65px;
@@ -48,11 +48,26 @@
     gap: 1rem;
   }
 
+  &__content {
+    height: 100%;
+  }
+
   &__footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 25px;
     border-top: 2px solid $bg-tertiary;
+  }
+
+  &__sidenav-container {
+    flex: 1;
+  }
+
+  &__sidenav {
+    &--mobile {
+      width: fit-content;
+      --mat-sidenav-container-background-color: hsla(19, 19%, 20%, 1);
+    }
   }
 }
