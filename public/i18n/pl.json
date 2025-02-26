@@ -28,13 +28,13 @@
   },
   "dialog": {
     "catalogs": {
-      "title": "Discover our catalogs!",
+      "title": "Poznaj nasze katalogi!",
       "drewmax": "Drewmax",
       "kronospan": "Kondex"
     },
     "contact": {
-      "title": "Contact us",
-      "phone": "Phone: +48756354345",
+      "title": "Skontaktuj się z nami",
+      "phone": "Telefon: +48756354345",
       "email": "E-mail: email@email.com"
     },
     "close": "Zamknij"
@@ -44,7 +44,8 @@
   },
   "projects": {
     "title": "Tytuł",
-    "category": "Kategoria"
+    "category": "Kategoria",
+    "no_projects": "Brak projektów do wyświetlenia."
   },
   "rooms": {
     "kitchen": "Kuchnia",

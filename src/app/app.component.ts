@@ -22,6 +22,7 @@ import { LanguageComponent } from './ui/language/language.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
+// TODO create in node js admin for add new projects (to automatize process of adding new projects for client)
 export class AppComponent {
   readonly dialog = inject(MatDialog);
   constructor(private translate: TranslateService) {
@@ -31,10 +32,6 @@ export class AppComponent {
   }
 
   public openContactDialog(): void {
-    // const data: DialogData = {
-    //   title: 'Skontaktuj się',
-    //   content: ['Telefon: +48756354345', 'E-mail: email@email.com'],
-    // };
     const data: DialogData = {
       title: 'contact.title',
       content: ['contact.phone', 'contact.email'],

@@ -1,7 +1,35 @@
-<p>project-list works for {{ projects.length }}</p>
-
-@for(project of projects; track project.id){
-<!-- <h3>Streszczenie</h3>
-<p>Tytuł: {{ project.title }}</p> -->
-<tcp-project-card></tcp-project-card>
-}
+<div class="projects">
+  <article class="projects__breadcrumbs">
+    <button class="projects__breadcrumb breadcrumb">
+      {{ "rooms." + room() | translate }}
+    </button>
+    @if(category()){
+    <button class="projects__breadcrumb breadcrumb">
+      {{ "categories." + category() | translate }}
+    </button>
+    }
+  </article>
+  @if (loading$()) {
+  <div class="projects__loading-container">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+  } @else if (projects$().length > 0) {
+  <div class="projects__grid">
+    @for (project of projects$(); track project.id) {
+    <tcp-project-card></tcp-project-card>
+    <!-- <tcp-project-card [project]="project"></tcp-project-card> -->
+    }
+  </div>
+  } @else if (!loading$()) {
+  <div class="projects__no-projects">
+    <p>{{ "projects.no_projects" | translate }}</p>
+  </div>
+  } @if (total$() > 0) {
+  <tcp-paginator
+    [currentPage]="current$()"
+    [pageSize]="page$()"
+    [totalItems]="total$()"
+    (pageChange)="onPageChange($event)"
+  ></tcp-paginator>
+  }
+</div>
