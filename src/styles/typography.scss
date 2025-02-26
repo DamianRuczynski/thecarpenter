@@ -32,6 +32,11 @@ button {
   color: $font-color-tertiary;
 }
 
+button.breadcrumb {
+  border-color: $font-color-secondary;
+  color: $font-color-secondary;
+}
+
 h1 {
   font-size: 3rem;
 }

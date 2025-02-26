@@ -44,7 +44,8 @@
   },
   "projects": {
     "title": "Title",
-    "category": "Category"
+    "category": "Category",
+    "no_projects": "No projects to display"
   },
   "rooms": {
     "kitchen": "Kitchen",
