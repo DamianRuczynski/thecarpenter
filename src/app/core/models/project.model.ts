@@ -4,6 +4,7 @@ export type TProject = {
   description: string;
   category: Category;
   media: Media[];
+  catalogs: Catalog[];
 };
 
 export type Media = {
@@ -11,10 +12,15 @@ export type Media = {
   url: string;
 };
 
-enum MediaCategory {
+export enum MediaCategory {
   VIDEO = 'video',
   IMAGE = 'image',
 }
+
+export type Catalog = {
+  url: string;
+  name: string;
+};
 
 export enum Room {
   KITCHEN = 'kitchen',
@@ -29,6 +35,7 @@ export enum Room {
 
 export enum Category {
   TABLE = 'table',
+  KITCHEN_ACCESSORIES = 'kitchen_accessories',
   CHAIR = 'chair',
   SOFA = 'sofa',
   BED = 'bed',

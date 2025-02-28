@@ -1,6 +1,12 @@
 {
+  "catalogs": {
+    "title": "Poznaj nasze katalogi!",
+    "drewmax": "Drewmax",
+    "kronospan": "Kondex"
+  },
   "categories": {
     "table": "Stół",
+    "kitchen_accessories": "Akcesoria kuchenne",
     "chair": "Krzesło",
     "cabinet": "Szafa",
     "fridge": "Lodówka",
@@ -27,20 +33,17 @@
     "phone": "+48756354345"
   },
   "dialog": {
-    "catalogs": {
-      "title": "Poznaj nasze katalogi!",
-      "drewmax": "Drewmax",
-      "kronospan": "Kondex"
-    },
     "contact": {
-      "title": "Skontaktuj się z nami",
-      "phone": "Telefon: +48756354345",
-      "email": "E-mail: email@email.com"
+      "title": "Skontaktuj się z nami"
     },
     "close": "Zamknij"
   },
   "menu": {
     "catalog": "Katalog"
+  },
+  "project": {
+    "catalogs": "Wykorzystalismy dekory z katologów: ",
+    "no_media": "Brak podłączonych multimediów."
   },
   "projects": {
     "title": "Tytuł",
@@ -56,5 +59,9 @@
     "office": "Biuro",
     "hallway": "Korytarz",
     "laundry_room": "Pralnia"
+  },
+  "welcome": {
+    "title": "Witamy w TheCarpenter",
+    "description": "Nasza firma specjalizuje się w tworzeniu unikalnych mebli i elementów drewnianych. Zobacz nasze wyróżnione projekty!"
   }
 }

@@ -1,6 +1,12 @@
 {
+  "catalogs": {
+    "title": "Discover our catalogs!",
+    "drewmax": "Drewmax",
+    "kronospan": "Kondex"
+  },
   "categories": {
     "table": "Table",
+    "kitchen_accessories": "Kitchen Accessories",
     "chair": "Chair",
     "cabinet": "Cabinet",
     "fridge": "Fridge",
@@ -27,20 +33,17 @@
     "phone": "+48756354345"
   },
   "dialog": {
-    "catalogs": {
-      "title": "Discover our catalogs!",
-      "drewmax": "Drewmax",
-      "kronospan": "Kondex"
-    },
     "contact": {
-      "title": "Contact us",
-      "phone": "Phone: +48756354345",
-      "email": "E-mail: email@email.com"
+      "title": "Contact us"
     },
     "close": "Close"
   },
   "menu": {
     "catalog": "Catalog"
+  },
+  "project": {
+    "catalogs": "We used materials from catalogs: ",
+    "no_media": "No media attached"
   },
   "projects": {
     "title": "Title",
@@ -56,5 +59,9 @@
     "office": "Office",
     "hallway": "Hallway",
     "laundry_room": "Laundry Room"
+  },
+  "welcome": {
+    "title": "Welcome to TheCarpenter",
+    "description": "Our company specializes in creating unique furniture and wooden elements. Check out our featured projects!"
   }
 }

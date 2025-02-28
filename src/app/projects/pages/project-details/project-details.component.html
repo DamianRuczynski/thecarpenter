@@ -1,3 +1,94 @@
-<p>
-  project-details works for {{ room }} -> {{ category }} and {{ projectId }}
-</p>
+@if(project){
+<div class="project">
+  <article class="project__breadcrumbs">
+    <button class="project__breadcrumb breadcrumb" (click)="navigate(room)">
+      {{ "rooms." + room | translate }}
+    </button>
+    @if(category){
+    <button
+      class="project__breadcrumb breadcrumb"
+      (click)="navigate(room, category)"
+    >
+      {{ "categories." + category | translate }}
+    </button>
+    }
+  </article>
+
+  <div class="project__details">
+    <div class="project__content">
+      <header class="project__header">
+        <h4 class="project__title">{{ project.title }}</h4>
+      </header>
+
+      <div class="project__description">
+        <p>{{ project.description }}</p>
+      </div>
+
+      @if(project.catalogs && project.catalogs.length > 0) {
+      <section class="project__catalogs">
+        <h5 class="project__catalogs-title">
+          {{ "project.catalogs" | translate }}
+        </h5>
+        <ul class="project__catalogs-list">
+          @for(catalog of project.catalogs; track catalog.name) {
+          <li class="project__catalog-item">
+            <a
+              class="project__catalog-link"
+              [href]="catalog.url"
+              target="_blank"
+            >
+              <mat-icon>library_books</mat-icon>
+              <span class="project__catalog-name">{{
+                catalog.name | translate
+              }}</span>
+            </a>
+          </li>
+          }
+        </ul>
+      </section>
+      }
+    </div>
+
+    <div class="project__media">
+      @if(project.media && project.media.length > 0) {
+      <div class="project__gallery">
+        @for(mediaItem of project.media; track mediaItem.url; let i = $index) {
+        @if(mediaItem.category === 'image') {
+        <div
+          [class]="
+            'project__gallery-item' +
+            (i === 0 ? ' project__gallery-item--featured' : '')
+          "
+        >
+          <img
+            class="project__image"
+            [src]="mediaItem.url"
+            [alt]="project.title + ' - ' + i"
+            loading="lazy"
+          />
+        </div>
+        } @else if(mediaItem.category === 'video') {
+        <div
+          [class]="
+            'project__gallery-item project__gallery-item--video' +
+            (i === 0 ? ' project__gallery-item--featured' : '')
+          "
+        >
+          <iframe
+            class="project__video"
+            [src]="mediaItem.url | safeResourceUrl"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        } }
+      </div>
+      } @else {
+      <div class="project__media-placeholder">
+        <p>{{ "project.no_media" | translate }}</p>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+}

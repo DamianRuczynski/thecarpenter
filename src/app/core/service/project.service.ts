@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {
   collection,
+  doc,
   DocumentData,
+  getDoc,
   getDocs,
   limit,
   orderBy,
@@ -12,7 +14,13 @@ import {
 } from 'firebase/firestore';
 import { db } from '../firebase/firebase.config';
 import { combineLatest, from, map, Observable, of, switchMap } from 'rxjs';
-import { Category, Media, Room, TProject } from '../models/project.model';
+import {
+  Catalog,
+  Category,
+  Media,
+  Room,
+  TProject,
+} from '../models/project.model';
 import { TPagination } from '../models/common.model';
 
 @Injectable({
@@ -100,6 +108,57 @@ export class ProjectService {
       })
     );
   }
+
+  public getProject(room: Room, projectId: string): Observable<TProject> {
+    const projectRef = doc(db, room, projectId);
+
+    return from(getDoc(projectRef)).pipe(
+      switchMap((docSnapshot) => {
+        if (!docSnapshot.exists()) {
+          throw new Error(`Project with ID ${projectId} not found`);
+        }
+
+        const project = {
+          id: docSnapshot.id,
+          ...docSnapshot.data(),
+          media: [] as Media[],
+          catalogs: [] as Catalog[],
+        } as TProject;
+
+        const mediaCollection = collection(db, `${room}/${project.id}/media`);
+        const mediaQuery$ = from(getDocs(mediaCollection)).pipe(
+          map((mediaSnapshot) => {
+            return mediaSnapshot.docs.map(
+              (mediaDoc) => mediaDoc.data() as Media
+            );
+          })
+        );
+
+        const catalogsCollection = collection(
+          db,
+          `${room}/${project.id}/catalogs`
+        );
+        const catalogsQuery$ = from(getDocs(catalogsCollection)).pipe(
+          map((catalogsSnapshot) => {
+            return catalogsSnapshot.docs.map(
+              (catalogDoc) => catalogDoc.data() as Catalog
+            );
+          })
+        );
+
+        return combineLatest([mediaQuery$, catalogsQuery$]).pipe(
+          map(([media, catalogs]) => {
+            return {
+              ...project,
+              media,
+              catalogs,
+            };
+          })
+        );
+      })
+    );
+  }
+
   getTotalProjectCount(room: Room, category?: Category): Observable<number> {
     const roomCollection = collection(db, room);
 

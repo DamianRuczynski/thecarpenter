@@ -1,0 +1,30 @@
+@import "../../../../styles/variables.scss";
+
+.project-card {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: $bg-tertiary;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  &__image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+  }
+  &__info {
+    padding: 16px;
+  }
+  &__title {
+    color: $font-color-tertiary;
+  }
+  &__description {
+    color: $font-color-tertiary;
+  }
+}

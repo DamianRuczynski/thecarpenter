@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import "variables";
 
 $font-primary: "Playfair Display", serif;
 
-$font-color-primary: hsla(26, 28%, 65%, 1);
-$font-color-secondary: hsla(0, 0%, 100%, 1);
-$font-color-tertiary: hsla(22, 24%, 20%, 1);
 body {
   font-family: $font-primary;
   color: $font-color-secondary;
@@ -59,7 +57,7 @@ h6 {
 p {
   font-size: 1rem;
   line-height: 1.6;
-  color: hsla(0, 0%, 90%, 0.9);
+  color: $font-color-secondary;
 }
 
 @media (max-width: 768px) {

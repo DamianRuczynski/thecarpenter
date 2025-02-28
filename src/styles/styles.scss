@@ -6,6 +6,7 @@
 @import "sidenav";
 
 body {
+  min-height: 100vh; /* Ensure minimum height is full viewport */
   background: radial-gradient(
         circle at top right,
         $bg-secondary 0%,
@@ -21,5 +22,6 @@ body {
     $bg-primary;
 
   background-size: 50vw 50vw, max(50vw, 500px) max(50vw, 500px), cover;
+  background-attachment: fixed; /* This is key for scrolling content */
   background-position: top right, bottom left, center;
 }

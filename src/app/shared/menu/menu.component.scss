@@ -59,4 +59,11 @@
       }
     }
   }
+
+  &__button {
+    @media (max-width: 600px) {
+      border: 2px solid $bg-tertiary;
+      color: $bg-tertiary;
+    }
+  }
 }

@@ -16,8 +16,9 @@
   } @else if (projects$().length > 0) {
   <div class="projects__grid">
     @for (project of projects$(); track project.id) {
-    <tcp-project-card></tcp-project-card>
-    <!-- <tcp-project-card [project]="project"></tcp-project-card> -->
+    <a [routerLink]="['/', room(), category(), project.id]">
+      <tcp-project-card [project]="project"></tcp-project-card>
+    </a>
     }
   </div>
   } @else if (!loading$()) {

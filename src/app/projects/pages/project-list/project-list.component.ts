@@ -1,11 +1,11 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Category, Room, TProject } from '../../../core/models/project.model';
 import { ProjectService } from '../../../core/service/project.service';
 import { switchMap, tap } from 'rxjs';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 import { QueryDocumentSnapshot, DocumentData } from 'firebase/firestore';
-import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaginatorComponent } from '../../../ui/paginator/paginator.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,6 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'tcp-project-list',
   standalone: true,
   imports: [
+    RouterLink,
     ProjectCardComponent,
     MatPaginatorModule,
     MatProgressSpinnerModule,

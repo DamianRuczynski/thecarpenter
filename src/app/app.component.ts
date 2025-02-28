@@ -49,7 +49,7 @@ export class AppComponent {
   }
   public openContactDialog(): void {
     const data: DialogData = {
-      title: 'contact.title',
+      title: 'dialog.contact.title',
       content: ['contact.phone', 'contact.email'],
     };
     this.dialog.open(DialogComponent, {

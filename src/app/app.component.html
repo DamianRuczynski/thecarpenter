@@ -23,6 +23,7 @@
         class="layout__sidenav"
         [ngClass]="{ 'layout__sidenav--mobile': mobileQuery.matches }"
         [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [opened]="!mobileQuery.matches"
       >
         <tcp-menu></tcp-menu>
       </mat-sidenav>
