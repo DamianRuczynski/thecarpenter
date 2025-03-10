@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { MenuComponent } from './shared/menu/menu.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './ui/dialog/dialog.component';
@@ -35,18 +35,19 @@ export class AppComponent {
   readonly dialog = inject(MatDialog);
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
-  constructor(private translate: TranslateService) {
-    this.translate.addLangs(['pl', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use(this.translate.getBrowserLang() === 'pl' ? 'pl' : 'en');
-
+  constructor() {
     const changeDetectorRef = inject(ChangeDetectorRef);
     const media = inject(MediaMatcher);
 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+
+    if (!localStorage.getItem('cookiesAccepted')) {
+      this.openCookiesDialog();
+    }
   }
+
   public openContactDialog(): void {
     const data: DialogData = {
       title: 'dialog.contact.title',
@@ -55,6 +56,20 @@ export class AppComponent {
     this.dialog.open(DialogComponent, {
       width: '350px',
       data: data,
+    });
+  }
+
+  public openCookiesDialog(): void {
+    const data: DialogData = {
+      title: 'cookies.title',
+      content: ['cookies.content'],
+    };
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: data,
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      localStorage.setItem('cookiesAccepted', 'true');
     });
   }
 }

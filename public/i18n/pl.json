@@ -1,4 +1,8 @@
 {
+  "cookies": {
+    "title": "Informacja o plikach cookies",
+    "content": "Ta strona wykorzystuje analityczne pliki cookies do analizy ruchu oraz związane z osadzonymi filmami. Możesz zarządzać nimi w ustawieniach przeglądarki."
+  },
   "catalogs": {
     "title": "Poznaj nasze katalogi!",
     "drewmax": "Drewmax",
@@ -28,9 +32,9 @@
   },
   "contact": {
     "button": "Skontaktuj się",
-    "name": "Imię",
-    "email": "email@email.com",
-    "phone": "+48756354345"
+    "name": "Michał Skrzypek",
+    "email": "thecarpentermichael@gmail.com",
+    "phone": "+48 506 704 081"
   },
   "dialog": {
     "contact": {

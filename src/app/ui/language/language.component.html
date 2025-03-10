@@ -1,2 +1,30 @@
-<!-- TODO change language button -->
-<mat-icon>language</mat-icon>
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="languageMenu"
+  class="language-selector"
+>
+  <mat-icon>language</mat-icon>
+</button>
+
+<mat-menu #languageMenu="matMenu" class="language-selector__menu">
+  <button
+    mat-menu-item
+    (click)="changeLanguageFn('pl')"
+    class="language-selector__item"
+  >
+    <div class="language-selector__content">
+      <img src="/flags/pl.svg" alt="Polska" class="language-selector__flag" />
+      <span class="language-selector__text">Polski</span>
+    </div>
+  </button>
+  <button
+    mat-menu-item
+    (click)="changeLanguageFn('en')"
+    class="language-selector__item"
+  >
+    <div class="language-selector__content">
+      <img src="/flags/gb.svg" alt="English" class="language-selector__flag" />
+      <span class="language-selector__text">English</span>
+    </div>
+  </button>
+</mat-menu>

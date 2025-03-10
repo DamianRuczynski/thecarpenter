@@ -1,4 +1,8 @@
 {
+  "cookies": {
+    "title": "Cookie Information",
+    "content": "This site uses analytical cookies for traffic analysis and cookies related to embedded videos. You can manage them in your browser settings."
+  },
   "catalogs": {
     "title": "Discover our catalogs!",
     "drewmax": "Drewmax",
@@ -28,9 +32,9 @@
   },
   "contact": {
     "button": "Contact Us",
-    "name": "Name",
-    "email": "email@email.com",
-    "phone": "+48756354345"
+    "name": "Michał Skrzypek",
+    "email": "thecarpentermichael@gmail.com",
+    "phone": "514 553 890"
   },
   "dialog": {
     "contact": {
