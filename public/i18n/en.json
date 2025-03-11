@@ -11,6 +11,10 @@
   "categories": {
     "table": "Table",
     "kitchen_accessories": "Kitchen Accessories",
+    "wardrobe_accessory": "Wardrobe Accessory",
+    "bathroom_accessory": "Bathroom Accessory",
+    "living_room_accessory": "Living Room Accessory",
+    "tv_stand_accessory": "TV Stand Accessory",
     "chair": "Chair",
     "cabinet": "Cabinet",
     "fridge": "Fridge",
@@ -19,6 +23,7 @@
     "bathtub": "Bathtub",
     "shower": "Shower",
     "washing_machine": "Washing Machine",
+    "laundry_basket": "Laundry basket",
     "bed": "Bed",
     "wardrobe": "Wardrobe",
     "dresser": "Dresser",
@@ -28,7 +33,9 @@
     "tv_stand": "TV Stand",
     "bookcase": "Bookcase",
     "shelf": "Shelf",
-    "hanger": "Hanger"
+    "glass_showcase": "Glass showcase",
+    "hanger": "Hanger",
+    "organizer": "Organizer"
   },
   "contact": {
     "button": "Contact Us",
@@ -62,7 +69,8 @@
     "dining_room": "Dining Room",
     "office": "Office",
     "hallway": "Hallway",
-    "laundry_room": "Laundry Room"
+    "laundry_room": "Laundry Room",
+    "wardrobe": "Wardrobe"
   },
   "welcome": {
     "title": "Welcome to TheCarpenter",

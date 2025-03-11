@@ -11,6 +11,10 @@
   "categories": {
     "table": "Stół",
     "kitchen_accessories": "Akcesoria kuchenne",
+    "wardrobe_accessory": "Akcesorium do szafy",
+    "bathroom_accessory": "Akcesorium łazienkowe",
+    "living_room_accessory": "Akcesorium do salonu",
+    "tv_stand_accessory": "Akcesorium do szafki RTV",
     "chair": "Krzesło",
     "cabinet": "Szafa",
     "fridge": "Lodówka",
@@ -19,6 +23,7 @@
     "bathtub": "Wanna",
     "shower": "Prysznic",
     "washing_machine": "Pralka",
+    "laundry_basket": "Kosz na pranie",
     "bed": "Łóżko",
     "wardrobe": "Garderoba",
     "dresser": "Komoda",
@@ -28,7 +33,9 @@
     "tv_stand": "Stojak pod telewizor",
     "bookcase": "Regał",
     "shelf": "Półka",
-    "hanger": "Wieszak"
+    "glass_showcase": "Witryny szklane",
+    "hanger": "Wieszak",
+    "organizer": "Organizer"
   },
   "contact": {
     "button": "Skontaktuj się",
@@ -62,7 +69,8 @@
     "dining_room": "Jadalnia",
     "office": "Biuro",
     "hallway": "Korytarz",
-    "laundry_room": "Pralnia"
+    "laundry_room": "Pralnia",
+    "wardrobe": "Garderoba"
   },
   "welcome": {
     "title": "Witamy w TheCarpenter",

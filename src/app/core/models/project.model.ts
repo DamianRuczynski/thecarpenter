@@ -31,11 +31,16 @@ export enum Room {
   OFFICE = 'office',
   HALLWAY = 'hallway',
   LAUNDRY_ROOM = 'laundry_room',
+  WARDROBE = 'wardrobe',
 }
 
 export enum Category {
   TABLE = 'table',
   KITCHEN_ACCESSORIES = 'kitchen_accessories',
+  BATHROOM_ACCESSORY = 'bathroom_accessory',
+  WARDROBE_ACCESSORY = 'wardrobe_accessory',
+  LIVING_ROOM_ACCESSORY = 'living_room_accessory',
+  TV_STAND_ACCESSORY = 'tv_stand_accessory',
   CHAIR = 'chair',
   SOFA = 'sofa',
   BED = 'bed',
@@ -46,6 +51,7 @@ export enum Category {
   BATHTUB = 'bathtub',
   SHOWER = 'shower',
   WASHING_MACHINE = 'washing_machine',
+  LAUNDRY_BASKET = 'laundry_basket',
   STOVE = 'stove',
   DESK = 'desk',
   WARDROBE = 'wardrobe',
@@ -54,7 +60,9 @@ export enum Category {
   COFFEE_TABLE = 'coffee_table',
   TV_STAND = 'tv_stand',
   BOOKCASE = 'bookcase',
+  GLASS_SHOWCASE = 'glass_showcase',
   HANGER = 'hanger',
+  ORGANIZER = 'organizer',
 }
 
 export const RoomCategories: Record<Room, Category[]> = {
@@ -65,6 +73,8 @@ export const RoomCategories: Record<Room, Category[]> = {
     Category.FRIDGE,
     Category.SINK,
     Category.STOVE,
+    Category.KITCHEN_ACCESSORIES,
+    Category.GLASS_SHOWCASE,
   ],
   [Room.BATHROOM]: [
     Category.SINK,
@@ -72,6 +82,7 @@ export const RoomCategories: Record<Room, Category[]> = {
     Category.SHOWER,
     Category.WASHING_MACHINE,
     Category.CABINET,
+    Category.BATHROOM_ACCESSORY,
   ],
   [Room.BEDROOM]: [
     Category.BED,
@@ -79,13 +90,16 @@ export const RoomCategories: Record<Room, Category[]> = {
     Category.DRESSER,
     Category.NIGHTSTAND,
     Category.SHELF,
+    Category.GLASS_SHOWCASE,
   ],
+  [Room.WARDROBE]: [Category.SHELF, Category.ORGANIZER],
   [Room.LIVING_ROOM]: [
     Category.SOFA,
     Category.COFFEE_TABLE,
     Category.TV_STAND,
     Category.BOOKCASE,
     Category.SHELF,
+    Category.GLASS_SHOWCASE,
   ],
   [Room.DINING_ROOM]: [Category.TABLE, Category.CHAIR, Category.CABINET],
   [Room.OFFICE]: [
@@ -94,11 +108,17 @@ export const RoomCategories: Record<Room, Category[]> = {
     Category.BOOKCASE,
     Category.SHELF,
   ],
-  [Room.HALLWAY]: [Category.HANGER, Category.CABINET, Category.SHELF],
+  [Room.HALLWAY]: [
+    Category.HANGER,
+    Category.CABINET,
+    Category.SHELF,
+    Category.GLASS_SHOWCASE,
+  ],
   [Room.LAUNDRY_ROOM]: [
     Category.WASHING_MACHINE,
     Category.CABINET,
     Category.SHELF,
+    Category.LAUNDRY_BASKET,
   ],
 };
 
