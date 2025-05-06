@@ -88,13 +88,13 @@
     border-radius: 4px;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1/1;
 
     &--featured {
       grid-column: 1 / -1;
 
       @media (min-width: 768px) {
-        aspect-ratio: 16/9;
+        max-height: 500px;
       }
     }
 

@@ -24,14 +24,13 @@ export type Catalog = {
 
 export enum Room {
   KITCHEN = 'kitchen',
-  BATHROOM = 'bathroom',
-  BEDROOM = 'bedroom',
-  LIVING_ROOM = 'living_room',
-  DINING_ROOM = 'dining_room',
-  OFFICE = 'office',
-  HALLWAY = 'hallway',
-  LAUNDRY_ROOM = 'laundry_room',
   WARDROBE = 'wardrobe',
+  BATHROOM = 'bathroom',
+  OFFICE = 'office',
+  DRESSER = 'dresser',
+  TV_STAND = 'tv_stand',
+  CABINET = 'cabinet',
+  BEDROOM = 'bedroom',
 }
 
 export enum Category {
@@ -92,34 +91,20 @@ export const RoomCategories: Record<Room, Category[]> = {
     Category.SHELF,
     Category.GLASS_SHOWCASE,
   ],
-  [Room.WARDROBE]: [Category.SHELF, Category.ORGANIZER],
-  [Room.LIVING_ROOM]: [
-    Category.SOFA,
-    Category.COFFEE_TABLE,
-    Category.TV_STAND,
-    Category.BOOKCASE,
+  [Room.WARDROBE]: [
     Category.SHELF,
-    Category.GLASS_SHOWCASE,
+    Category.ORGANIZER,
+    Category.WARDROBE_ACCESSORY,
   ],
-  [Room.DINING_ROOM]: [Category.TABLE, Category.CHAIR, Category.CABINET],
+  [Room.TV_STAND]: [Category.TV_STAND, Category.TV_STAND_ACCESSORY],
   [Room.OFFICE]: [
     Category.DESK,
     Category.CHAIR,
     Category.BOOKCASE,
     Category.SHELF,
   ],
-  [Room.HALLWAY]: [
-    Category.HANGER,
-    Category.CABINET,
-    Category.SHELF,
-    Category.GLASS_SHOWCASE,
-  ],
-  [Room.LAUNDRY_ROOM]: [
-    Category.WASHING_MACHINE,
-    Category.CABINET,
-    Category.SHELF,
-    Category.LAUNDRY_BASKET,
-  ],
+  [Room.CABINET]: [Category.CABINET, Category.SHELF, Category.HANGER],
+  [Room.DRESSER]: [Category.DRESSER, Category.SHELF],
 };
 
 export type MenuConfig = {

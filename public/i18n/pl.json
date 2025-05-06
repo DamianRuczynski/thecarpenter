@@ -65,15 +65,14 @@
     "kitchen": "Kuchnia",
     "bathroom": "Łazienka",
     "bedroom": "Sypialnia",
-    "living_room": "Salon",
-    "dining_room": "Jadalnia",
+    "wardrobe": "Garderoba",
     "office": "Biuro",
-    "hallway": "Korytarz",
-    "laundry_room": "Pralnia",
-    "wardrobe": "Garderoba"
+    "dresser": "Komoda",
+    "tv_stand": "RTV",
+    "cabinet": "Szafa"
   },
   "welcome": {
     "title": "Witamy w TheCarpenter",
-    "description": "Nasza firma specjalizuje się w tworzeniu unikalnych mebli i elementów drewnianych. Zobacz nasze wyróżnione projekty!"
+    "description": "Nasza firma specjalizuje się w tworzeniu unikalnych mebli. Zobacz nasze wyróżnione projekty!"
   }
 }

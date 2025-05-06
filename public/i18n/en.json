@@ -65,12 +65,11 @@
     "kitchen": "Kitchen",
     "bathroom": "Bathroom",
     "bedroom": "Bedroom",
-    "living_room": "Living Room",
-    "dining_room": "Dining Room",
+    "wardrobe": "Wardrobe",
     "office": "Office",
-    "hallway": "Hallway",
-    "laundry_room": "Laundry Room",
-    "wardrobe": "Wardrobe"
+    "dresser": "Dresser",
+    "tv_stand": "TV Stand",
+    "cabinet": "Cabinet"
   },
   "welcome": {
     "title": "Welcome to TheCarpenter",

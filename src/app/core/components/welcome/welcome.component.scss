@@ -26,19 +26,17 @@
   }
 
   &__gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
     width: 100%;
     max-width: 1200px;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   &__gallery-item {
     width: 100%;
+    max-width: 500px;
     cursor: pointer;
     transition: transform 0.3s ease;
     border-radius: 1rem;

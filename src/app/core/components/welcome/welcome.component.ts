@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ProjectCardComponent } from '../../../projects/components/project-card/project-card.component';
-import { TProject } from '../../models/project.model';
+import { Category, Room, TProject } from '../../models/project.model';
 import { TranslateModule } from '@ngx-translate/core';
+import { ProjectService } from '../../service/project.service';
 
 @Component({
   selector: 'tcp-welcome',
@@ -12,7 +13,17 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss',
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements OnInit {
   projects: TProject[] = [];
-  // TODO use menuservice.menuconfig to get collection names to get some projects (max 4 projects to display)
+
+  constructor(private projectService: ProjectService) {}
+
+  ngOnInit(): void {
+    // TODO in future when data will be more fullfiled display best projects from proejct service, can be max 3-4 projects
+    this.projectService
+      .getProject(Room.KITCHEN, '0xFNeHB4J4qy1mqHYpTs')
+      .subscribe((p) => {
+        this.projects.push(p);
+      });
+  }
 }
