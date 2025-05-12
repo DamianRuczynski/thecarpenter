@@ -44,7 +44,6 @@ export class ProjectDetailsComponent {
         )
       )
       .subscribe((project) => {
-        console.log(project);
         project.media.sort((a, b) =>
           a.category === MediaCategory.IMAGE ? -1 : 1
         );

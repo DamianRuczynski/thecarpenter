@@ -1,5 +1,10 @@
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterOutlet,
+} from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MenuComponent } from './shared/menu/menu.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,6 +17,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { MediaMatcher } from '@angular/cdk/layout';
 import { NgClass } from '@angular/common';
+import { filter } from 'rxjs';
+import { AnalyticsService } from './core/service/analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -31,11 +38,14 @@ import { NgClass } from '@angular/common';
   styleUrl: './app.component.scss',
 })
 // TODO create in node js admin for add new projects (to automatize process of adding new projects for client)
-export class AppComponent {
+export class AppComponent implements OnInit {
   readonly dialog = inject(MatDialog);
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
-  constructor() {
+  constructor(
+    private router: Router,
+    private analyticsService: AnalyticsService
+  ) {
     const changeDetectorRef = inject(ChangeDetectorRef);
     const media = inject(MediaMatcher);
 
@@ -46,6 +56,14 @@ export class AppComponent {
     if (!localStorage.getItem('cookiesAccepted')) {
       this.openCookiesDialog();
     }
+  }
+
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.analyticsService.logPageView(event.urlAfterRedirects);
+      });
   }
 
   public openContactDialog(): void {
