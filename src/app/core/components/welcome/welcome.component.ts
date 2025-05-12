@@ -21,7 +21,7 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
     // TODO in future when data will be more fullfiled display best projects from proejct service, can be max 3-4 projects
     this.projectService
-      .getProject(Room.KITCHEN, 'aHf5j3DtcjQMcfpUneIL')
+      .getProject(Room.KITCHEN, 'g0z82B27V1X60d5puPqz')
       .subscribe((p) => {
         this.projects.push(p);
       });

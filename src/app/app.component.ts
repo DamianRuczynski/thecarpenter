@@ -70,6 +70,7 @@ export class AppComponent implements OnInit {
     const data: DialogData = {
       title: 'dialog.contact.title',
       content: ['contact.phone', 'contact.email'],
+      spans: ['contact.license'],
     };
     this.dialog.open(DialogComponent, {
       width: '350px',

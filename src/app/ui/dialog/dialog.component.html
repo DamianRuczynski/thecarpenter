@@ -1,14 +1,17 @@
 <h2 mat-dialog-title>{{ data.title | translate }}</h2>
 <mat-dialog-content>
   @if(data.isContentLink){ @for(link of data.links; track link){
-
-  <a [href]="link.href" target="_blank" rel="noopener noreferrer">{{
-    link.name | translate
-  }}</a
-  ><br />
+  <a [href]="link.href" target="_blank" rel="noopener noreferrer">
+    {{ link.name | translate }}
+  </a>
+  <br />
 
   } } @else { @for(item of data.content; track item){
   <p>{{ item | translate }}</p>
+  }
+  <br />
+  @for(item of data.spans; track item){
+  <span>{{ item | translate }}</span>
   } }
 </mat-dialog-content>
 <mat-dialog-actions>
