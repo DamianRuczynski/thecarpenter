@@ -22,7 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class ProjectDetailsComponent {
   project!: TProject;
   room!: Room;
-  category!: Category;
+  category: Category | null = null;
   projectId!: string;
 
   constructor(
@@ -44,6 +44,7 @@ export class ProjectDetailsComponent {
         )
       )
       .subscribe((project) => {
+        console.log(project);
         project.media.sort((a, b) =>
           a.category === MediaCategory.IMAGE ? -1 : 1
         );

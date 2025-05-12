@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  addDoc,
   collection,
   doc,
   DocumentData,
@@ -12,16 +13,18 @@ import {
   startAfter,
   where,
 } from 'firebase/firestore';
-import { db } from '../firebase/firebase.config';
+import { db, storage } from '../firebase/firebase.config';
 import { combineLatest, from, map, Observable, of, switchMap } from 'rxjs';
 import {
   Catalog,
   Category,
   Media,
+  MediaCategory,
   Room,
   TProject,
 } from '../models/project.model';
 import { TPagination } from '../models/common.model';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 @Injectable({
   providedIn: 'root',
@@ -170,5 +173,41 @@ export class ProjectService {
     }
 
     return from(getDocs(projectsQuery)).pipe(map((snapshot) => snapshot.size));
+  }
+
+  // DODAJ PROJEKT
+
+  async addProject(
+    title: string,
+    room: Room,
+    category: Category | null,
+    description: string,
+    files: File[]
+  ): Promise<void> {
+    // Najpierw zapisujemy dokument projektu bez pola media
+    const projectData: Omit<TProject, 'id' | 'media'> = {
+      title,
+      description,
+      category: category,
+      catalogs: [],
+    };
+
+    // Dodajemy dokument projektu do kolekcji room
+    const projectRef = await addDoc(collection(db, room), projectData);
+
+    // Upload zdjęć i zapis do subkolekcji media
+    const mediaCollection = collection(db, room, projectRef.id, 'media');
+    const mediaPromises = files.map(async (file) => {
+      const storageRef = ref(
+        storage,
+        `projects/${room}/${Date.now()}_${file.name}`
+      );
+      await uploadBytes(storageRef, file);
+      const url = await getDownloadURL(storageRef);
+      const mediaData: Media = { category: MediaCategory.IMAGE as const, url };
+      await addDoc(mediaCollection, mediaData);
+    });
+
+    await Promise.all(mediaPromises);
   }
 }

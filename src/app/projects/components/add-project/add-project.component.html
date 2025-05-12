@@ -1,0 +1,80 @@
+<form
+  [formGroup]="projectForm"
+  (ngSubmit)="onSubmit()"
+  class="add_project_form"
+>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Dodaj nowy projekt</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Tytuł</mat-label>
+        <input matInput formControlName="title" required />
+        <mat-error *ngIf="projectForm.get('title')?.hasError('required')">
+          Tytuł jest wymagany!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Pokój</mat-label>
+        <mat-select
+          formControlName="room"
+          required
+          (selectionChange)="projectForm.get('category')?.reset()"
+        >
+          <mat-option *ngFor="let room of rooms" [value]="room">
+            {{ "rooms." + room | translate }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="projectForm.get('room')?.hasError('required')">
+          Pokój jest wymagany!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Kategoria</mat-label>
+        <mat-select formControlName="category" [disabled]="true">
+          <mat-option
+            *ngFor="let category of availableCategories"
+            [value]="category"
+          >
+            {{ "categories." + category | translate }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Opis</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+      <div>
+        <input
+          type="file"
+          multiple
+          (change)="onFileSelected($event)"
+          accept="image/*"
+          required
+        />
+        <mat-error *ngIf="selectedFiles.length === 0">
+          Przynajmniej jedno zdjęcie jest wymagane!
+        </mat-error>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!projectForm.valid || selectedFiles.length === 0"
+      >
+        @if(isLoading){
+        <mat-spinner [diameter]="20"></mat-spinner>
+        } @else{
+        <span> Dodaj projekt </span>
+        }
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

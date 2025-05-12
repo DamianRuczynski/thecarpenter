@@ -2,7 +2,7 @@ export type TProject = {
   id: string;
   title: string;
   description: string;
-  category: Category;
+  category: Category | null;
   media: Media[];
   catalogs: Catalog[];
 };

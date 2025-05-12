@@ -23,6 +23,17 @@
         }
       </ul>
     </li>
+    } @if(developerMode){
+
+    <li class="menu__list__item">
+      <a
+        [routerLink]="['/add']"
+        routerLinkActive="router-link-active"
+        class="menu__list__item__link"
+      >
+        {{ "Dodaj obiekt" | translate }}
+      </a>
+    </li>
     }
   </ul>
 
