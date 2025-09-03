@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build && timeout 3 && firebase deploy --only hosting:thecarpenter"
   },
   "private": true,
   "dependencies": {

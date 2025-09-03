@@ -2,8 +2,9 @@ export type TProject = {
   id: string;
   title: string;
   description: string;
-  category: Category;
+  category: Category | null;
   media: Media[];
+  catalogs: Catalog[];
 };
 
 export type Media = {
@@ -11,24 +12,34 @@ export type Media = {
   url: string;
 };
 
-enum MediaCategory {
+export enum MediaCategory {
   VIDEO = 'video',
   IMAGE = 'image',
 }
 
+export type Catalog = {
+  url: string;
+  name: string;
+};
+
 export enum Room {
   KITCHEN = 'kitchen',
+  WARDROBE = 'wardrobe',
   BATHROOM = 'bathroom',
-  BEDROOM = 'bedroom',
-  LIVING_ROOM = 'living_room',
-  DINING_ROOM = 'dining_room',
   OFFICE = 'office',
-  HALLWAY = 'hallway',
-  LAUNDRY_ROOM = 'laundry_room',
+  DRESSER = 'dresser',
+  TV_STAND = 'tv_stand',
+  CABINET = 'cabinet',
+  BEDROOM = 'bedroom',
 }
 
 export enum Category {
   TABLE = 'table',
+  KITCHEN_ACCESSORIES = 'kitchen_accessories',
+  BATHROOM_ACCESSORY = 'bathroom_accessory',
+  WARDROBE_ACCESSORY = 'wardrobe_accessory',
+  LIVING_ROOM_ACCESSORY = 'living_room_accessory',
+  TV_STAND_ACCESSORY = 'tv_stand_accessory',
   CHAIR = 'chair',
   SOFA = 'sofa',
   BED = 'bed',
@@ -39,6 +50,7 @@ export enum Category {
   BATHTUB = 'bathtub',
   SHOWER = 'shower',
   WASHING_MACHINE = 'washing_machine',
+  LAUNDRY_BASKET = 'laundry_basket',
   STOVE = 'stove',
   DESK = 'desk',
   WARDROBE = 'wardrobe',
@@ -47,7 +59,9 @@ export enum Category {
   COFFEE_TABLE = 'coffee_table',
   TV_STAND = 'tv_stand',
   BOOKCASE = 'bookcase',
+  GLASS_SHOWCASE = 'glass_showcase',
   HANGER = 'hanger',
+  ORGANIZER = 'organizer',
 }
 
 export const RoomCategories: Record<Room, Category[]> = {
@@ -58,6 +72,8 @@ export const RoomCategories: Record<Room, Category[]> = {
     Category.FRIDGE,
     Category.SINK,
     Category.STOVE,
+    Category.KITCHEN_ACCESSORIES,
+    Category.GLASS_SHOWCASE,
   ],
   [Room.BATHROOM]: [
     Category.SINK,
@@ -65,6 +81,7 @@ export const RoomCategories: Record<Room, Category[]> = {
     Category.SHOWER,
     Category.WASHING_MACHINE,
     Category.CABINET,
+    Category.BATHROOM_ACCESSORY,
   ],
   [Room.BEDROOM]: [
     Category.BED,
@@ -72,27 +89,22 @@ export const RoomCategories: Record<Room, Category[]> = {
     Category.DRESSER,
     Category.NIGHTSTAND,
     Category.SHELF,
+    Category.GLASS_SHOWCASE,
   ],
-  [Room.LIVING_ROOM]: [
-    Category.SOFA,
-    Category.COFFEE_TABLE,
-    Category.TV_STAND,
-    Category.BOOKCASE,
+  [Room.WARDROBE]: [
     Category.SHELF,
+    Category.ORGANIZER,
+    Category.WARDROBE_ACCESSORY,
   ],
-  [Room.DINING_ROOM]: [Category.TABLE, Category.CHAIR, Category.CABINET],
+  [Room.TV_STAND]: [Category.TV_STAND, Category.TV_STAND_ACCESSORY],
   [Room.OFFICE]: [
     Category.DESK,
     Category.CHAIR,
     Category.BOOKCASE,
     Category.SHELF,
   ],
-  [Room.HALLWAY]: [Category.HANGER, Category.CABINET, Category.SHELF],
-  [Room.LAUNDRY_ROOM]: [
-    Category.WASHING_MACHINE,
-    Category.CABINET,
-    Category.SHELF,
-  ],
+  [Room.CABINET]: [Category.CABINET, Category.SHELF, Category.HANGER],
+  [Room.DRESSER]: [Category.DRESSER, Category.SHELF],
 };
 
 export type MenuConfig = {

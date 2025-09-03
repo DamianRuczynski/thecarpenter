@@ -1,0 +1,35 @@
+@import "../../../styles/variables.scss";
+
+.paginator {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    background-color: $bg-primary;
+    border-radius: 24px;
+    padding: 4px;
+    border: 2px solid $bg-secondary;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &__indicator {
+    padding: 0 16px;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
+  }
+}

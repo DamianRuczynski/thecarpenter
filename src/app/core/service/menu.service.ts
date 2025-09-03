@@ -26,12 +26,10 @@ export class MenuService {
 
     for (const room of collections) {
       const categories = await this.getCategoriesForRoom(room as Room);
-      if (categories.length > 0) {
-        menuConfig.push({
-          room: room as Room,
-          categories,
-        });
-      }
+      menuConfig.push({
+        room: room as Room,
+        categories,
+      });
     }
 
     return menuConfig;

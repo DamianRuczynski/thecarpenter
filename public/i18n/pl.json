@@ -1,6 +1,20 @@
 {
+  "cookies": {
+    "title": "Informacja o plikach cookies",
+    "content": "Ta strona wykorzystuje analityczne pliki cookies do analizy ruchu oraz związane z osadzonymi filmami. Możesz zarządzać nimi w ustawieniach przeglądarki."
+  },
+  "catalogs": {
+    "title": "Poznaj nasze katalogi!",
+    "drewmax": "Drewmax",
+    "kronospan": "Kondex"
+  },
   "categories": {
     "table": "Stół",
+    "kitchen_accessories": "Akcesoria kuchenne",
+    "wardrobe_accessory": "Akcesorium do szafy",
+    "bathroom_accessory": "Akcesorium łazienkowe",
+    "living_room_accessory": "Akcesorium do salonu",
+    "tv_stand_accessory": "Akcesorium do szafki RTV",
     "chair": "Krzesło",
     "cabinet": "Szafa",
     "fridge": "Lodówka",
@@ -9,6 +23,7 @@
     "bathtub": "Wanna",
     "shower": "Prysznic",
     "washing_machine": "Pralka",
+    "laundry_basket": "Kosz na pranie",
     "bed": "Łóżko",
     "wardrobe": "Garderoba",
     "dresser": "Komoda",
@@ -18,42 +33,47 @@
     "tv_stand": "Stojak pod telewizor",
     "bookcase": "Regał",
     "shelf": "Półka",
-    "hanger": "Wieszak"
+    "glass_showcase": "Witryny szklane",
+    "hanger": "Wieszak",
+    "organizer": "Organizer"
   },
   "contact": {
     "button": "Skontaktuj się",
-    "name": "Imię",
-    "email": "email@email.com",
-    "phone": "+48756354345"
+    "name": "Michał Skrzypek",
+    "email": "thecarpentermichael@gmail.com",
+    "phone": "+48 506 704 081",
+    "license": "*Niektóre zdjęcia użyte na tej stronie pochodzą z zasobów iStock i zostały wykorzystane na podstawie odpowiedniej licencji. Służą wyłącznie celom ilustracyjnym i nie przedstawiają realizacji naszej firmy."
   },
   "dialog": {
-    "catalogs": {
-      "title": "Discover our catalogs!",
-      "drewmax": "Drewmax",
-      "kronospan": "Kondex"
-    },
     "contact": {
-      "title": "Contact us",
-      "phone": "Phone: +48756354345",
-      "email": "E-mail: email@email.com"
+      "title": "Skontaktuj się z nami"
     },
     "close": "Zamknij"
   },
   "menu": {
     "catalog": "Katalog"
   },
+  "project": {
+    "catalogs": "Wykorzystalismy dekory z katologów: ",
+    "no_media": "Brak podłączonych multimediów."
+  },
   "projects": {
     "title": "Tytuł",
-    "category": "Kategoria"
+    "category": "Kategoria",
+    "no_projects": "Brak projektów do wyświetlenia."
   },
   "rooms": {
     "kitchen": "Kuchnia",
     "bathroom": "Łazienka",
     "bedroom": "Sypialnia",
-    "living_room": "Salon",
-    "dining_room": "Jadalnia",
+    "wardrobe": "Garderoba",
     "office": "Biuro",
-    "hallway": "Korytarz",
-    "laundry_room": "Pralnia"
+    "dresser": "Komoda",
+    "tv_stand": "RTV",
+    "cabinet": "Szafa"
+  },
+  "welcome": {
+    "title": "Witamy w TheCarpenter",
+    "description": "Nasza firma specjalizuje się w tworzeniu unikalnych mebli. Zobacz nasze wyróżnione projekty!"
   }
 }

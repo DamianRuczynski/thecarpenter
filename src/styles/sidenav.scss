@@ -1,0 +1,11 @@
+.mat-drawer-container .mat-drawer-transition,
+html {
+  --mat-sidenav-container-background-color: transparent;
+  --mat-sidenav-content-background-color: transparent;
+  --mat-sidenav-scrim-color: transparent;
+}
+
+.mat-drawer.mat-drawer-side,
+.mat-drawer {
+  width: fit-content;
+}

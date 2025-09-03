@@ -1,0 +1,14 @@
+<section class="welcome">
+  <div class="welcome__header">
+    <h1 class="welcome__title">{{ "welcome.title" | translate }}</h1>
+    <p class="welcome__description">{{ "welcome.description" | translate }}</p>
+  </div>
+
+  <div class="welcome__gallery">
+    <div class="welcome__gallery-item" *ngFor="let project of projects">
+      <a [routerLink]="['/projects', project.id]">
+        <tcp-project-card [project]="project"></tcp-project-card>
+      </a>
+    </div>
+  </div>
+</section>

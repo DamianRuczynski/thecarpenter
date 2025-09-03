@@ -1,1 +1,15 @@
-<p>project-card works!</p>
+<div class="project-card">
+  <div class="project-card__image--container">
+    @if(mainImage){
+
+    <img [src]="mainImage" [alt]="project.title" class="project-card__image" />
+    }@else{
+
+    <p>{{ "project.no_media" | translate }}</p>
+    }
+  </div>
+  <div class="project-card__info">
+    <h5 class="project-card__title">{{ project.title }}</h5>
+    <p class="project-card__description">{{ project.description }}</p>
+  </div>
+</div>

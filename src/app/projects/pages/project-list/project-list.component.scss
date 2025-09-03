@@ -1,0 +1,27 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 15px;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding: 0 20px 10px;
+  max-height: 100%;
+  max-width: 1920px;
+
+  &__breadcrumbs {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__no-projects {
+    text-align: center;
+  }
+}

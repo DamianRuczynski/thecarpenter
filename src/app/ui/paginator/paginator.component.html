@@ -1,0 +1,22 @@
+<div class="paginator">
+  <div class="paginator__container">
+    @if(label){
+    <p class="paginator__label">{{ label }}</p>
+    }
+    <div class="paginator__controls">
+      <button mat-fab [disabled]="currentPage === 0" (click)="previousPage()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div class="paginator__indicator">
+        <p>{{ currentPage + 1 }} / {{ getTotalPages() }}</p>
+      </div>
+      <button
+        mat-fab
+        [disabled]="currentPage >= getTotalPages() - 1"
+        (click)="nextPage()"
+      >
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

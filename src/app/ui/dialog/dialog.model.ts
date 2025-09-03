@@ -1,5 +1,10 @@
 export type DialogData =
-  | { title: string; isContentLink?: false; content: string[] }
+  | {
+      title: string;
+      isContentLink?: false;
+      content: string[];
+      spans?: string[];
+    }
   | { title: string; isContentLink: true; links: Link[] };
 
 type Link = {

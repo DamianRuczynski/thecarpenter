@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, isDevMode } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { RoomCategories } from '../../core/models/project.model';
 import { ScrollbarDirective } from '../directives/scrollbar.directive';
@@ -25,6 +25,10 @@ import { DialogData } from '../../ui/dialog/dialog.model';
 export class MenuComponent {
   readonly dialog = inject(MatDialog);
   constructor(public menu: MenuService) {}
+
+  public get developerMode(): boolean {
+    return isDevMode();
+  }
 
   public openCatalogDialog(): void {
     const data: DialogData = {

@@ -1,6 +1,20 @@
 {
+  "cookies": {
+    "title": "Cookie Information",
+    "content": "This site uses analytical cookies for traffic analysis and cookies related to embedded videos. You can manage them in your browser settings."
+  },
+  "catalogs": {
+    "title": "Discover our catalogs!",
+    "drewmax": "Drewmax",
+    "kronospan": "Kondex"
+  },
   "categories": {
     "table": "Table",
+    "kitchen_accessories": "Kitchen Accessories",
+    "wardrobe_accessory": "Wardrobe Accessory",
+    "bathroom_accessory": "Bathroom Accessory",
+    "living_room_accessory": "Living Room Accessory",
+    "tv_stand_accessory": "TV Stand Accessory",
     "chair": "Chair",
     "cabinet": "Cabinet",
     "fridge": "Fridge",
@@ -9,6 +23,7 @@
     "bathtub": "Bathtub",
     "shower": "Shower",
     "washing_machine": "Washing Machine",
+    "laundry_basket": "Laundry basket",
     "bed": "Bed",
     "wardrobe": "Wardrobe",
     "dresser": "Dresser",
@@ -18,42 +33,47 @@
     "tv_stand": "TV Stand",
     "bookcase": "Bookcase",
     "shelf": "Shelf",
-    "hanger": "Hanger"
+    "glass_showcase": "Glass showcase",
+    "hanger": "Hanger",
+    "organizer": "Organizer"
   },
   "contact": {
     "button": "Contact Us",
-    "name": "Name",
-    "email": "email@email.com",
-    "phone": "+48756354345"
+    "name": "Michał Skrzypek",
+    "email": "thecarpentermichael@gmail.com",
+    "phone": "514 553 890",
+    "license": "*Some images used on this website are licensed from iStock and are used for illustrative purposes only. They do not depict actual projects completed by our company."
   },
   "dialog": {
-    "catalogs": {
-      "title": "Discover our catalogs!",
-      "drewmax": "Drewmax",
-      "kronospan": "Kondex"
-    },
     "contact": {
-      "title": "Contact us",
-      "phone": "Phone: +48756354345",
-      "email": "E-mail: email@email.com"
+      "title": "Contact us"
     },
     "close": "Close"
   },
   "menu": {
     "catalog": "Catalog"
   },
+  "project": {
+    "catalogs": "We used materials from catalogs: ",
+    "no_media": "No media attached"
+  },
   "projects": {
     "title": "Title",
-    "category": "Category"
+    "category": "Category",
+    "no_projects": "No projects to display"
   },
   "rooms": {
     "kitchen": "Kitchen",
     "bathroom": "Bathroom",
     "bedroom": "Bedroom",
-    "living_room": "Living Room",
-    "dining_room": "Dining Room",
+    "wardrobe": "Wardrobe",
     "office": "Office",
-    "hallway": "Hallway",
-    "laundry_room": "Laundry Room"
+    "dresser": "Dresser",
+    "tv_stand": "TV Stand",
+    "cabinet": "Cabinet"
+  },
+  "welcome": {
+    "title": "Welcome to TheCarpenter",
+    "description": "Our company specializes in creating unique furniture and wooden elements. Check out our featured projects!"
   }
 }

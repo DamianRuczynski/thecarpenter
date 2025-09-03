@@ -1,0 +1,11 @@
+@import "./typography.scss";
+
+.mat-accent.mat-mdc-fab,
+.mat-accent.mat-mdc-mini-fab {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  --mdc-fab-container-color: hsla(26, 28%, 65%, 1);
+  --mdc-fab-small-container-color: hsla(26, 28%, 65%, 1);
+}
